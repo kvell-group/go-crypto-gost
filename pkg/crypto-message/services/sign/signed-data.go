@@ -132,7 +132,10 @@ func (sd *SignedData) AddSignerChain(
 	}
 
 	sd.sd.DigestAlgorithmIdentifiers = append(sd.sd.DigestAlgorithmIdentifiers,
-		pkix.AlgorithmIdentifier{Algorithm: sd.digestOid},
+		pkix.AlgorithmIdentifier{
+			Algorithm: sd.digestOid,
+			Parameters: asn1.NullRawValue,
+		},
 	)
 
 	digestOidID, err := oids.GetID(sd.digestOid)
@@ -149,9 +152,9 @@ func (sd *SignedData) AddSignerChain(
 
 	h := hash.New()
 	h.Write(sd.data)
-	sd.messageDigest = chunks.ReverseFullBytes(h.Sum(nil))
+	sd.messageDigest = h.Sum(nil)
 
-	encryptionOid, err := oids.Get(digestOidID)
+	encryptionOid, err := oids.Get(oids.Tc26Gost34102012256)
 	if err != nil {
 		return ge.Pin(err)
 	}
@@ -204,7 +207,10 @@ func (sd *SignedData) AddSignerChain(
 	signer := signerinfo.Container{
 		AuthenticatedAttributes:   finalAttrs,
 		UnauthenticatedAttributes: finalUnsignedAttrs,
-		DigestAlgorithm:           pkix.AlgorithmIdentifier{Algorithm: sd.digestOid},
+		DigestAlgorithm:           pkix.AlgorithmIdentifier{
+			Algorithm: sd.digestOid,
+			Parameters: asn1.NullRawValue,
+		},
 		DigestEncryptionAlgorithm: pkix.AlgorithmIdentifier{Algorithm: encryptionOid},
 		IssuerAndSerialNumber:     ias,
 		EncryptedDigest:           signature,
@@ -234,7 +240,7 @@ func (sd *SignedData) SignAttributes(
 
 	h := digestAlg.New()
 	h.Write(attrBytes)
-	hash := h.Sum(nil)
+	hash := chunks.ReverseFullBytes(h.Sum(nil))
 
 	return key.Sign(rand.Reader, hash, nil)
 }

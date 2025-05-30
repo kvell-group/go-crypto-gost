@@ -21,7 +21,7 @@ type Container struct {
 	AuthenticatedAttributes   []Attribute `asn1:"optional,omitempty,tag:0"`
 	DigestEncryptionAlgorithm pkix.AlgorithmIdentifier
 	EncryptedDigest           []byte
-	UnauthenticatedAttributes []Attribute `asn1:"optional,tag:1"`
+	UnauthenticatedAttributes []Attribute `asn1:"optional,omitempty,tag:1"`
 }
 
 func (si *Container) SetUnauthenticatedAttributes(extraUnsignedAttrs []Attribute) error {

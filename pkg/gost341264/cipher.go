@@ -17,7 +17,7 @@
 package gost341264
 
 import (
-	"github.com/nobuenhombre/go-crypto-gost/pkg/gost28147"
+	"github.com/kvell-group/go-crypto-gost/pkg/gost28147"
 )
 
 const (

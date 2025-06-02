@@ -22,7 +22,7 @@ import (
 	"testing"
 	"testing/quick"
 
-	"github.com/nobuenhombre/go-crypto-gost/pkg/gost28147"
+	"github.com/kvell-group/go-crypto-gost/pkg/gost28147"
 )
 
 func TestHashInterface(t *testing.T) {

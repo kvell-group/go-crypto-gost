@@ -20,8 +20,8 @@ import (
 	"crypto/hmac"
 	"hash"
 
-	"github.com/nobuenhombre/go-crypto-gost/pkg/gost34112012256"
-	"github.com/nobuenhombre/go-crypto-gost/pkg/gost34112012512"
+	"github.com/kvell-group/go-crypto-gost/pkg/gost34112012256"
+	"github.com/kvell-group/go-crypto-gost/pkg/gost34112012512"
 )
 
 type PRFIPsecPRFPlusGOSTR34112012 struct{ h hash.Hash }

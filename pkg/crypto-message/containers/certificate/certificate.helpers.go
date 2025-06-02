@@ -8,13 +8,13 @@ import (
 
 	"github.com/nobuenhombre/suikat/pkg/chunks"
 
-	publickeyalgorithm "github.com/nobuenhombre/go-crypto-gost/pkg/crypto-message/oids/algorithm/public-key-algorithm"
-	signaturealgorithm "github.com/nobuenhombre/go-crypto-gost/pkg/crypto-message/oids/algorithm/signature-algorithm"
+	publickeyalgorithm "github.com/kvell-group/go-crypto-gost/pkg/crypto-message/oids/algorithm/public-key-algorithm"
+	signaturealgorithm "github.com/kvell-group/go-crypto-gost/pkg/crypto-message/oids/algorithm/signature-algorithm"
 
-	"github.com/nobuenhombre/go-crypto-gost/pkg/crypto-message/containers"
+	"github.com/kvell-group/go-crypto-gost/pkg/crypto-message/containers"
 
-	"github.com/nobuenhombre/go-crypto-gost/pkg/crypto-message/oids/algorithm"
-	"github.com/nobuenhombre/go-crypto-gost/pkg/gost3410"
+	"github.com/kvell-group/go-crypto-gost/pkg/crypto-message/oids/algorithm"
+	"github.com/kvell-group/go-crypto-gost/pkg/gost3410"
 	"github.com/nobuenhombre/suikat/pkg/ge"
 )
 

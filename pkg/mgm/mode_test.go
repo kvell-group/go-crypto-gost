@@ -23,8 +23,8 @@ import (
 	"testing"
 	"testing/quick"
 
-	"github.com/nobuenhombre/go-crypto-gost/pkg/gost3412128"
-	"github.com/nobuenhombre/go-crypto-gost/pkg/gost341264"
+	"github.com/kvell-group/go-crypto-gost/pkg/gost3412128"
+	"github.com/kvell-group/go-crypto-gost/pkg/gost341264"
 )
 
 func TestVector(t *testing.T) {

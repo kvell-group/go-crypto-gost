@@ -1,4 +1,4 @@
-PROJECT_NAME="github.com/nobuenhombre/go-crypto-gost"
+PROJECT_NAME="github.com/kvell-group/go-crypto-gost"
 
 help: Makefile
 	@echo "Выберите опицию сборки "$(BINARY_NAME)":"
